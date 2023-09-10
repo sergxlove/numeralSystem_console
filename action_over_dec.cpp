@@ -1,31 +1,48 @@
 #include "action.h"
 
-int action_over_dec::to_bin()
+action_over_dec::action_over_dec()
 {
-	return 0;
 }
 
-int action_over_dec::to_oct()
+action_over_dec::~action_over_dec()
 {
-	return 0;
 }
 
-int action_over_dec::to_hex()
+std::list<int> action_over_dec::to_bin(int value)
 {
-	return 0;
+	while (value >= 2)
+	{
+		if (value % 2 == 0)
+		{
+			result.push_front(0);
+		}
+		else
+		{
+			result.push_front(1);
+		}
+		value /= 2;
+	}
+	result.push_front(value);
+	return result;
 }
 
-int action_to_dec::to_bin()
+std::list<int> action_over_dec::to_oct(int value)
 {
-	return 0;
+	int del_value = 0;
+	int del_remains = 0;
+	while (value >= 8)
+	{
+		del_value = value / 8;
+		del_remains = value - del_value * 8;
+		result.push_front(del_remains);
+		value /= 8;
+	}
+	result.push_front(value);
+	return result;
 }
 
-int action_to_dec::to_oct()
+std::list<int> action_over_dec::to_hex(int value)
 {
-	return 0;
+	return result;
 }
 
-int action_to_dec::to_hex()
-{
-	return 0;
-}
