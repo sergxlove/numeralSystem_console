@@ -40,9 +40,9 @@ std::list<int> action_to_dec::to_oct(int value)
 	return result;
 }
 
-std::list<std::string> action_to_dec::to_hex(int value)
+std::list<int> action_to_dec::to_hex(std::string value)
 {
-	return result_hex;
+	return result;
 }
 
 std::list<int> action_to_dec::convert_int_to_list(int number)
