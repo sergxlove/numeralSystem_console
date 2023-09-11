@@ -18,7 +18,7 @@ std::list<int> action_to_dec::to_oct(int value)
 	return result;
 }
 
-std::list<int> action_to_dec::to_hex(int value)
+std::list<std::string> action_to_dec::to_hex(int value)
 {
-	return result;
+	return result_hex;
 }
