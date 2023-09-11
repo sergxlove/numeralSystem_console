@@ -3,6 +3,7 @@
 #define _ACTION_H_
 #include <list>
 #include <string>
+#include <cmath>
 class action
 {
 public:
@@ -34,6 +35,7 @@ public:
 private:
 	std::list<int> result;
 	std::list<std::string> result_hex;
+	std::list<int> convert_int_to_list(int number);
 };
 #endif
 
