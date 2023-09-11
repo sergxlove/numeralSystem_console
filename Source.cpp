@@ -6,7 +6,8 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 	action_over_dec act;
-	for (auto el : act.to_oct(137))
+	action_to_dec toact;
+	for (auto el : toact.to_oct(211))
 	{
 		cout << el;
 	}
