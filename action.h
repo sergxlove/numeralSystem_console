@@ -5,6 +5,7 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <iostream>
 class action
 {
 public:
@@ -42,6 +43,14 @@ private:
 	std::list<int> convert_int_to_list(int number);
 	int convert_char_to_int(char ch);
 
+};
+class menu
+{
+public:
+	void starting_text();
+	void print_line();
+	void sys_numeral();
+private:
 };
 #endif
 
