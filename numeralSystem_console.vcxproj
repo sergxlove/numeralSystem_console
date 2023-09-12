@@ -129,10 +129,13 @@
   <ItemGroup>
     <ClCompile Include="action_over_dec.cpp" />
     <ClCompile Include="action_to_dec.cpp" />
+    <ClCompile Include="enum.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="action.h" />
+    <ClInclude Include="enum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
