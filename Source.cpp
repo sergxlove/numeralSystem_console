@@ -19,7 +19,6 @@ int main()
 	switch (var_switch)
 	{
 	case var::var_bin:
-		cout << endl;
 		break;
 	case var::var_oct:
 		break;
