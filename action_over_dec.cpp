@@ -41,7 +41,7 @@ std::list<int> action_over_dec::to_oct(int value)
 	return result;
 }
 
-std::list<std::string> action_over_dec::to_hex(int value)
+std::list<std::string> action_over_dec::to_hex_int(int value)
 {
 	int del_value = 0;
 	int del_remains = 0;
@@ -108,6 +108,11 @@ std::list<std::string> action_over_dec::to_hex(int value)
 		result_hex.push_front(std::to_string(value));
 	}
 	return result_hex;
+}
+
+std::list<int> action_over_dec::to_hex_string(std::string value)
+{
+	return std::list<int>();
 }
 
 
