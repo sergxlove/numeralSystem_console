@@ -49,7 +49,7 @@ std::list<std::string> action_over_dec::to_hex_int(int value)
 	{
 		del_value = value / 16;
 		del_remains = value - del_value * 16;
-		if (del_remains > 10)
+		if (del_remains > 9)
 		{
 			switch (del_remains)
 			{
@@ -79,7 +79,7 @@ std::list<std::string> action_over_dec::to_hex_int(int value)
 		}
 		value /= 16;
 	}
-	if (value > 10)
+	if (value > 9)
 	{
 		switch (value)
 		{
