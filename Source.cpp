@@ -72,6 +72,32 @@ int main()
 			}
 			break;
 		case var::var_oct:
+			cout << "Введите ваше число" << endl;
+			cin >> value_int;
+			if (m.check_correct_value(value_int, 8) == true)
+			{
+				cout << "В какую систему первести" << endl;
+				m.sys_numeral();
+				cin >> var_second_switch;
+				switch (var_second_switch)
+				{
+				case var::var_bin:
+					break;
+				case var::var_oct:
+					cout << "перевод невозможен" << endl;
+					break;
+				case var::var_dec:
+					break;
+				case var::var_hex:
+					break;
+				default:
+					break;
+				}
+			}
+			else
+			{
+				cout << "Число введено некорректно" << endl;
+			}
 			break;
 		case var::var_dec:
 			break;
