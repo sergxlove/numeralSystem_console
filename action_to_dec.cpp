@@ -72,6 +72,19 @@ std::list<std::string> action_to_dec::to_hex_int(int value)
 	return std::list<std::string>();
 }
 
+int action_to_dec::convert_to_int(std::list<int> value_list)
+{
+	int result = 0;
+	std::list<int>::iterator it = value_list.begin();
+	for (int i = 0;i < value_list.size();i++)
+	{
+		result *= std::pow(10, i);
+		result += *it;
+		std::advance(it, 1);
+	}
+	return result;
+}
+
 std::list<int> action_to_dec::convert_int_to_list(int number)
 {
 	std::list<int> result;

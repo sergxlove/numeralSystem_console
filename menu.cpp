@@ -25,3 +25,25 @@ void menu::sys_numeral()
 	std::cout << "4 - шестнадцатеричная" << std::endl;
 	std::cout << "Ваш выбор : " << std::endl;
 }
+
+bool menu::check_correct_value(int value, int numeral_sys)
+{
+	bool result = true;
+	int var_del = 0;
+	while(value)
+	{
+		var_del = value % 10;
+		if (var_del >= numeral_sys)
+		{
+			return false;
+		}
+		value /= 10;
+	}
+	return true;
+}
+
+bool menu::check_correct_value(std::string value, int numeral_sys)
+{
+	return false;
+}
+

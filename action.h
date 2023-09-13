@@ -37,6 +37,7 @@ public:
 	std::list<int> to_oct(int value) override;
 	std::list<int> to_hex_string(std::string value) override;
 	std::list<std::string> to_hex_int(int value) override;
+	int convert_to_int(std::list<int> value_list);
 private:
 	std::list<int> result;
 	std::list<std::string> result_hex;
@@ -50,6 +51,8 @@ public:
 	void starting_text();
 	void print_line();
 	void sys_numeral();
+	bool check_correct_value(int value, int numeral_sys);
+	bool check_correct_value(std::string value, int numeral_sys);
 private:
 };
 #endif
