@@ -49,7 +49,7 @@ bool menu::check_correct_value(std::string value, int numeral_sys)
 		if (value[i] != 'A' && value[i] != 'B' && value[i] != 'C' && value[i] != 'D' && value[i] != 'E' && value[i] != 'F')
 		{
 			value_int = value[i];
-			if (value[i] <= 30 || value[i] >= 39)
+			if (value[i] <= 47 || value[i] >= 58)
 			{
 				return false;
 			}
