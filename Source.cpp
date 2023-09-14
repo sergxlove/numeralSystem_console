@@ -164,7 +164,42 @@ int main()
 			cin >> value_str;
 			if (m.check_correct_value(value_str, 16) == true)
 			{
-
+				cout << "В какую систему первести" << endl;
+				m.sys_numeral();
+				cin >> var_second_switch;
+				switch (var_second_switch)
+				{
+				case var::var_bin:
+					result = to_dec.to_hex_string(value_str);
+					result_int = to_dec.convert_to_int(result);
+					for (auto el : over_dec.to_bin(result_int))
+					{
+						cout << el;
+					}
+					cout << endl;
+					break;
+				case var::var_oct:
+					result = to_dec.to_hex_string(value_str);
+					result_int = to_dec.convert_to_int(result);
+					for (auto el : over_dec.to_oct(result_int))
+					{
+						cout << el;
+					}
+					cout << endl;
+					break;
+				case var::var_dec:
+					for (auto el : to_dec.to_hex_string(value_str))
+					{
+						cout << el;
+					}
+					cout << endl;
+					break;
+				case var::var_hex:
+					cout << "перевод невозможен" << endl;
+					break;
+				default:
+					break;
+				}
 			}
 			else
 			{
