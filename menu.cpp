@@ -28,7 +28,6 @@ void menu::sys_numeral()
 
 bool menu::check_correct_value(int value, int numeral_sys)
 {
-	bool result = true;
 	int var_del = 0;
 	while(value)
 	{
@@ -44,6 +43,18 @@ bool menu::check_correct_value(int value, int numeral_sys)
 
 bool menu::check_correct_value(std::string value, int numeral_sys)
 {
-	return false;
+	int value_int = 0;
+	for (int i = 0;i < value.size();i++)
+	{
+		if (value[i] != 'A' && value[i] != 'B' && value[i] != 'C' && value[i] != 'D' && value[i] != 'E' && value[i] != 'F')
+		{
+			value_int = value[i];
+			if (value[i] <= 30 || value[i] >= 39)
+			{
+				return false;
+			}
+		}
+	}
+	return true;
 }
 

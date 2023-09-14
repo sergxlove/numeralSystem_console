@@ -14,14 +14,15 @@ int main()
 	int var_switch = 0;
 	int var_second_switch = 0;
 	int value_int = 0;
+	string value_str;
 	m.print_line();
 	m.starting_text();
 	m.print_line();
-	m.sys_numeral();
-	cin >> var_switch;
-	var_switch = convert_to_enum(var_switch);
 	while (var_switch != 5)
 	{
+		m.sys_numeral();
+		cin >> var_switch;
+		var_switch = convert_to_enum(var_switch);
 		switch (var_switch)
 		{
 		case var::var_bin:
@@ -82,13 +83,32 @@ int main()
 				switch (var_second_switch)
 				{
 				case var::var_bin:
+					result = to_dec.to_oct(value_int);
+					result_int = to_dec.convert_to_int(result);
+					for (auto el : over_dec.to_bin(result_int))
+					{
+						cout << el;
+					}
+					cout << endl;
 					break;
 				case var::var_oct:
 					cout << "перевод невозможен" << endl;
 					break;
 				case var::var_dec:
+					for (auto el : to_dec.to_oct(value_int))
+					{
+						cout << el;
+					}
+					cout << endl;
 					break;
 				case var::var_hex:
+					result = to_dec.to_oct(value_int);
+					result_int = to_dec.convert_to_int(result);
+					for (auto el : over_dec.to_hex_int(result_int))
+					{
+						cout << el;
+					}
+					cout << endl;
 					break;
 				default:
 					break;
@@ -100,8 +120,56 @@ int main()
 			}
 			break;
 		case var::var_dec:
+			cout << "Введите ваше число" << endl;
+			cin >> value_int;
+			if (m.check_correct_value(value_int, 10)==true)
+			{
+				cout << "В какую систему первести" << endl;
+				m.sys_numeral();
+				cin >> var_second_switch;
+				switch (var_second_switch)
+				{
+				case var::var_bin:
+					for (auto el : to_dec.to_bin(value_int))
+					{
+						cout << el;
+					}
+					cout << endl;
+					break;
+				case var::var_oct:
+					for (auto el : to_dec.to_oct(value_int))
+					{
+						cout << el;
+					}
+					cout << endl;
+					break;
+				case var::var_dec:
+					cout << "перевод невозможен" << endl;
+					break;
+				case var::var_hex:
+					for (auto el : over_dec.to_hex_int(value_int))
+					{
+						cout << el;
+					}
+					break;
+				}
+			}
+			else
+			{
+				cout << "Число введено некорректно" << endl;
+			}
 			break;
 		case var::var_hex:
+			cout << "Введите ваше число" << endl;
+			cin >> value_str;
+			if (m.check_correct_value(value_str, 16) == true)
+			{
+
+			}
+			else
+			{
+				cout << "Число введено некорректно" << endl;
+			}
 			break;
 		default:
 			break;
