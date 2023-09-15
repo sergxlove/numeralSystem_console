@@ -7,7 +7,8 @@ enum var
 	var_bin,
 	var_oct,
 	var_dec,
-	var_hex
+	var_hex,
+	var_cancel
 };
 var convert_to_enum(int var);
 #endif // !_ENUM_
