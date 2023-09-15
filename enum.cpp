@@ -18,5 +18,9 @@ var convert_to_enum(int var)
     {
         return var::var_hex;
     }
+    if (var == 5)
+    {
+        return var::var_cancel;
+    }
     return var_no_indef;
 }

@@ -23,6 +23,7 @@ void menu::sys_numeral()
 	std::cout << "2 - восьмеричная" << std::endl;
 	std::cout << "3 - десятичная" << std::endl;
 	std::cout << "4 - шестнадцатеричная" << std::endl;
+	std::cout << "5 - отмена" << std::endl;
 	std::cout << "Ваш выбор : " << std::endl;
 }
 

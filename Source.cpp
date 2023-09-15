@@ -15,10 +15,11 @@ int main()
 	int var_second_switch = 0;
 	int value_int = 0;
 	string value_str;
+	bool exit = false;
 	m.print_line();
 	m.starting_text();
 	m.print_line();
-	while (var_switch != 5)
+	while (exit!=true)
 	{
 		m.sys_numeral();
 		cin >> var_switch;
@@ -26,10 +27,12 @@ int main()
 		switch (var_switch)
 		{
 		case var::var_bin:
+			m.print_line();
 			cout << "Введите ваше число" << endl;
 			cin >> value_int;
 			if (m.check_correct_value(value_int, 2) == true)
 			{
+				m.print_line();
 				cout << "В какую систему первести" << endl;
 				m.sys_numeral();
 				cin >> var_second_switch;
@@ -63,7 +66,15 @@ int main()
 					}
 					cout << endl;
 					break;
+				case var::var_cancel:
+					m.print_line();
+					cout << "Действие отменено" << endl;
+					m.print_line();
+					break;
 				default:
+					m.print_line();
+					cout << "Неверно выбранный вариант ответа" << endl;
+					m.print_line();
 					break;
 				}
 			}
@@ -73,10 +84,12 @@ int main()
 			}
 			break;
 		case var::var_oct:
+			m.print_line();
 			cout << "Введите ваше число" << endl;
 			cin >> value_int;
 			if (m.check_correct_value(value_int, 8) == true)
 			{
+				m.print_line();
 				cout << "В какую систему первести" << endl;
 				m.sys_numeral();
 				cin >> var_second_switch;
@@ -110,7 +123,15 @@ int main()
 					}
 					cout << endl;
 					break;
+				case var::var_cancel:
+					m.print_line();
+					cout << "Действие отменено" << endl;
+					m.print_line();
+					break;
 				default:
+					m.print_line();
+					cout << "Неверно выбранный вариант ответа" << endl;
+					m.print_line();
 					break;
 				}
 			}
@@ -120,10 +141,12 @@ int main()
 			}
 			break;
 		case var::var_dec:
+			m.print_line();
 			cout << "Введите ваше число" << endl;
 			cin >> value_int;
 			if (m.check_correct_value(value_int, 10)==true)
 			{
+				m.print_line();
 				cout << "В какую систему первести" << endl;
 				m.sys_numeral();
 				cin >> var_second_switch;
@@ -152,6 +175,16 @@ int main()
 						cout << el;
 					}
 					break;
+				case var::var_cancel:
+					m.print_line();
+					cout << "Действие отменено" << endl;
+					m.print_line();
+					break;
+				default:
+					m.print_line();
+					cout << "Неверно выбранный вариант ответа" << endl;
+					m.print_line();
+					break;
 				}
 			}
 			else
@@ -160,10 +193,12 @@ int main()
 			}
 			break;
 		case var::var_hex:
+			m.print_line();
 			cout << "Введите ваше число" << endl;
 			cin >> value_str;
 			if (m.check_correct_value(value_str, 16) == true)
 			{
+				m.print_line();
 				cout << "В какую систему первести" << endl;
 				m.sys_numeral();
 				cin >> var_second_switch;
@@ -197,7 +232,15 @@ int main()
 				case var::var_hex:
 					cout << "перевод невозможен" << endl;
 					break;
+				case var::var_cancel:
+					m.print_line();
+					cout << "Действие отменено" << endl;
+					m.print_line();
+					break;
 				default:
+					m.print_line();
+					cout << "Неверно выбранный вариант ответа" << endl;
+					m.print_line();
 					break;
 				}
 			}
@@ -206,7 +249,13 @@ int main()
 				cout << "Число введено некорректно" << endl;
 			}
 			break;
+		case var::var_cancel:
+			exit = true;
+			break;
 		default:
+			m.print_line();
+			cout << "Неверно выбранный вариант ответа" << endl;
+			m.print_line();
 			break;
 		}
 	}
